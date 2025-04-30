@@ -1,9 +1,4 @@
-// Site de formations pour Mlle Destiny
 import React from "react";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
 import { motion } from "framer-motion";
 
 export default function Home() {
@@ -38,23 +33,25 @@ export default function Home() {
             desc: "Libère tes blocages et manifeste une vie en cohérence avec tes désirs.",
           },
         ].map((formation, index) => (
-          <Card key={index} className="rounded-2xl shadow-xl">
-            <CardContent className="p-6">
-              <h2 className="text-2xl font-semibold mb-2">{formation.title}</h2>
-              <p className="mb-4">{formation.desc}</p>
-              <Button className="w-full">Je découvre</Button>
-            </CardContent>
-          </Card>
+          <div key={index} className="rounded-2xl shadow-xl p-6 bg-white">
+            <h2 className="text-2xl font-semibold mb-2">{formation.title}</h2>
+            <p className="mb-4">{formation.desc}</p>
+            <button className="bg-pink-500 text-white px-4 py-2 rounded-xl w-full">
+              Je découvre
+            </button>
+          </div>
         ))}
       </section>
 
       <section className="mt-20 max-w-xl mx-auto">
         <h3 className="text-2xl font-bold mb-4 text-center">Contact</h3>
         <form className="space-y-4">
-          <Input placeholder="Ton prénom" />
-          <Input type="email" placeholder="Ton email" />
-          <Textarea placeholder="Ton message" />
-          <Button className="w-full">Envoyer</Button>
+          <input placeholder="Ton prénom" className="w-full border rounded p-2" />
+          <input type="email" placeholder="Ton email" className="w-full border rounded p-2" />
+          <textarea placeholder="Ton message" className="w-full border rounded p-2" />
+          <button className="bg-pink-600 text-white px-4 py-2 rounded-xl w-full">
+            Envoyer
+          </button>
         </form>
       </section>
     </main>
